@@ -26,7 +26,7 @@ npm install --save sequelize-paginate-easy
 1. Firstly you need connect model to easy sequelize pagination:
 
 ```js
-const ePagination = "sequelize-paginate-easy";
+const ePagination = require("sequelize-paginate-easy");
 const models = require("./path/to/models");
 
 const defaultParams = {
@@ -72,7 +72,7 @@ getUsers(shapeOfQuery);
 1. Firstly you need connect model to easy sequelize pagination:
 
 ```js
-const ePagination = "sequelize-paginate-easy";
+const ePagination = require("sequelize-paginate-easy");
 const models = require("./path/to/models");
 
 const defaultParams = {
