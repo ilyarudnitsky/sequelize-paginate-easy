@@ -6,6 +6,7 @@
   "peerDependencies": {
     "sequelize": "^6.3.5"
   },
+  "repository": "ilyarudnitsky/sequelize-paginate-easy",
   "author": "Ilya Rudnitsky",
   "license": "ISC"
 }
