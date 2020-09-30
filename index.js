@@ -76,7 +76,7 @@ module.exports = function (model, defaultValues = {}) {
 
         where[Op.and][Op.or].push({
           [by]: {
-            $like: likeOperatorSearch.replace("value", search.query)
+            $like: def.likeOperatorSearch.replace("value", search.query)
           }
         });
       }
