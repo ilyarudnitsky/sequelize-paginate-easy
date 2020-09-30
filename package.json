@@ -1,0 +1,11 @@
+{
+  "name": "sequelize-paginate-easy",
+  "version": "0.1.0",
+  "description": "sequelize paginate easy using",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "sequelize": "^6.3.5"
+  },
+  "author": "Ilya Rudnitsky",
+  "license": "ISC"
+}
