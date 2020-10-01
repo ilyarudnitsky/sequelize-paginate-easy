@@ -79,6 +79,7 @@ const defaultParams = {
   order: [["id", "DESC"]],
   limit: 25,
   likeOperatorSearch: "%value%",
+  caseInsensitive: true,
   page: 3
 };
 
