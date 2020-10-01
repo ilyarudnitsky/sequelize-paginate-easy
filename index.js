@@ -77,7 +77,7 @@ module.exports = function (model, defaultValues = {}) {
 
         if (def.caseInsensitive) {
           where[Op.and][Op.or].push(
-            Sequelize.where(Sequelize.fn("lower", Sequelize.col("by")), {
+            Sequelize.where(Sequelize.fn("lower", Sequelize.col(by)), {
               $like: def.likeOperatorSearch.replace("value", search.query)
             })
           );

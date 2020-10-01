@@ -32,6 +32,7 @@ const models = require("./path/to/models");
 const defaultParams = {
   order: [["id", "DESC"]],
   likeOperatorSearch: "%value%",
+  caseInsensitive: true,
   limit: 25,
   page: 3
 };
