@@ -6,7 +6,8 @@ module.exports = function (model, defaultValues = {}) {
     limit: defaultValues.limit || 10,
     page: defaultValues.page || 1,
     order: defaultValues.order,
-    likeOperatorSearch: "%value%" || defaultValues.likeOperatorSearch
+    likeOperatorSearch: defaultValues.likeOperatorSearch || "%value%",
+    caseInsensitive: defaultValues.caseInsensitive
   };
 
   model._addScope = model.addScope;
@@ -74,11 +75,19 @@ module.exports = function (model, defaultValues = {}) {
           subQuery = false;
         }
 
-        where[Op.and][Op.or].push({
-          [by]: {
-            $like: def.likeOperatorSearch.replace("value", search.query)
-          }
-        });
+        if (def.caseInsensitive) {
+          where[Op.and][Op.or].push(
+            Sequelize.where(Sequelize.fn("lower", Sequelize.col("by")), {
+              $like: def.likeOperatorSearch.replace("value", search.query)
+            })
+          );
+        } else {
+          where[Op.and][Op.or].push({
+            [by]: {
+              $like: def.likeOperatorSearch.replace("value", search.query)
+            }
+          });
+        }
       }
     }
 

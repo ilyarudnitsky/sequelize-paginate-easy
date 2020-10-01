@@ -1,6 +1,6 @@
 {
   "name": "sequelize-paginate-easy",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "sequelize paginate easy using",
   "main": "src/index.js",
   "peerDependencies": {
