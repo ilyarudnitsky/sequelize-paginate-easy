@@ -101,7 +101,8 @@ module.exports = function (model, defaultValues = {}) {
           subQuery = false;
         }
 
-        where[Op.and][field.name] = field.value;
+        where[Op.and][field.name] =
+          field.value.length === 0 ? null : field.value;
       }
     }
 

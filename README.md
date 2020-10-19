@@ -2,9 +2,9 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/sequelize-paginate-easy" target="_blank"><img src="https://img.shields.io/badge/Packages-NPM-%23CB3837.svg?logo=npm&link=https://www.npmjs.com"></a>
-  <a href="https://reactjs.org/" target="_blank"><img src="https://img.shields.io/badge/sequelize-paginate-green"></a>
-  <a href="https://reactjs.org/" target="_blank"><img src="https://img.shields.io/badge/version-0.1.0-blue"></a>
-    <a href="https://reactjs.org/" target="_blank"><img src="https://img.shields.io/badge/sequelize%20version-^6.3.5-blue"></a>
+  <a href="https://www.npmjs.com/package/sequelize-paginate-easy" target="_blank"><img src="https://img.shields.io/badge/sequelize-paginate-green"></a>
+  <a href="https://www.npmjs.com/package/sequelize-paginate-easy" target="_blank"><img src="https://img.shields.io/badge/version-0.1.0-blue"></a>
+  <a href="https://www.npmjs.com/package/sequelize-paginate-easy" target="_blank"><img src="https://img.shields.io/badge/sequelize%20version-^6.3.5-blue"></a>
 </p>
 
 ## Description
