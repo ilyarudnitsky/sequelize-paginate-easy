@@ -141,6 +141,57 @@ getUsers(shapeOfQuery);
 */
 ```
 
+## Additional params
+
+```js
+user.addScope("nameOfScope", params => {
+  console.log(params); // Your params
+
+  return {
+    include: [
+      {
+        model: models.role,
+        as: "userRoles",
+        through: {
+          model: models.user_role,
+          where: {
+            role: params.user.role
+          }
+        },
+        required: false
+      },
+      {
+        model: models.location,
+        as: "location",
+        required: false
+      }
+    ]
+  };
+});
+
+/*
+  At this moment scope works only with include shape
+*/
+
+const getUsers = async query => {
+  const myAdditionalParams = {
+    user: {
+      role: "admin"
+    }
+  };
+
+  const res = await models.user.paginate(
+    query,
+    "nameOfScope",
+    myAdditionalParams
+  );
+
+  return res;
+};
+
+getUsers(shapeOfQuery);
+```
+
 ## What is shape of query?
 
 Example:

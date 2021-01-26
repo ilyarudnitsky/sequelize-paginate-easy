@@ -18,13 +18,16 @@ module.exports = function (model, defaultValues = {}) {
     model.paginateScopes[name] = scope;
   };
 
-  model.paginate = async function (params = {}, scope) {
+  model.paginate = async function (params = {}, scope, additionalParams) {
     const limit = params.limit || def.limit;
     const page = params.page || def.page;
     const order = params.order || def.order;
     const filters = getFilters(params.filter);
     const include =
-      model.paginateScopes[scope] && model.paginateScopes[scope].include;
+      model.paginateScopes[scope] &&
+      (typeof model.paginateScopes[scope] === "function"
+        ? model.paginateScopes[scope](additionalParams).include
+        : model.paginateScopes[scope]);
 
     return model
       .findAndCountAll({
