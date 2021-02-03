@@ -93,6 +93,9 @@ const user = ePagination(models.user, defaultParams);
 */
 
 user.addScope("nameOfScope", {
+  where: {
+    attr: "value"
+  }
   include: [
     {
       model: models.role,
@@ -109,7 +112,7 @@ user.addScope("nameOfScope", {
 });
 
 /*
-  At this moment scope works only with include shape
+  At this moment scope works only with include and where shape
 */
 ```
 

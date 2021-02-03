@@ -22,12 +22,9 @@ module.exports = function (model, defaultValues = {}) {
     const limit = params.limit || def.limit;
     const page = params.page || def.page;
     const order = params.order || def.order;
+    const where = model.paginateScopes[scope](additionalParams).where;
+    const include = model.paginateScopes[scope](additionalParams).include;
     const filters = getFilters(params.filter);
-    const include =
-      model.paginateScopes[scope] &&
-      (typeof model.paginateScopes[scope] === "function"
-        ? model.paginateScopes[scope](additionalParams).include
-        : model.paginateScopes[scope]);
 
     return model
       .findAndCountAll({
@@ -35,7 +32,7 @@ module.exports = function (model, defaultValues = {}) {
         order,
         include,
         offset: limit * (page - 1),
-        where: filters.where,
+        where: { ...filters.where, ...where },
         subQuery: filters.subQuery,
         distinct: true
       })
