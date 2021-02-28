@@ -71,7 +71,6 @@ module.exports = function (model, defaultValues = {}) {
 
       for (let by of search.by) {
         if (by.indexOf(".") !== -1) {
-          by = `$${by}$`;
           subQuery = false;
         }
 
